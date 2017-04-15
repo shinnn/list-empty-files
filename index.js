@@ -1,16 +1,15 @@
 'use strict';
 
-var lstatDir = require('lstat-dir');
-var toArray = require('lodash/fp/toArray');
+const lstatDir = require('lstat-dir');
 
 function filterEmptyFiles(map) {
-  var filePaths = new Set();
+  const filePaths = new Set();
 
-  toArray(map).forEach(function(pathStatPair) {
+  for (const pathStatPair of map) {
     if (pathStatPair[1].isFile() && pathStatPair[1].size === 0) {
       filePaths.add(pathStatPair[0]);
     }
-  });
+  }
 
   return filePaths;
 }
