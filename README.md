@@ -41,12 +41,12 @@ const listEmptyFiles = require('list-empty-files');
 
 ### listEmptyFiles(*dir*)
 
-*dir*: `String` (directory path)  
+*dir*: `string` (directory path)  
+*options*: `Object` ([`readdir-sorted`](https://github.com/shinnn/readdir-sorted) options)  
 Return: `Promise<Set>`
 
 The promise will be fulfilled with a [`Set`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set) of strings — absolute paths of all zero byte files included in the given directory.
 
-<!--
 Options are directly passed to the underlying [`readdir-sorted`](https://github.com/shinnn/readdir-sorted#readdirsortedpath--options) to control the order of results.
 
 ```javascript
@@ -69,7 +69,6 @@ listEmptyFiles('/dir', {
   iterator.next().value; //=> '/empty-files/10.js'
 });
 ```
--->
 
 ## License
 
