@@ -2,18 +2,14 @@
 
 const lstatDir = require('lstat-dir');
 
-function filterEmptyFiles(map) {
-  const filePaths = new Set();
+module.exports = async function listEmptyFiles(...args) {
+  const paths = new Set();
 
-  for (const [path, stat] of map) {
+  for (const [path, stat] of await lstatDir(...args)) {
     if (stat.isFile() && stat.size === 0) {
-      filePaths.add(path);
+      paths.add(path);
     }
   }
 
-  return filePaths;
-}
-
-module.exports = function listEmptyFiles(...args) {
-  return lstatDir(...args).then(filterEmptyFiles);
+  return paths;
 };
