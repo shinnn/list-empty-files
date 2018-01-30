@@ -1,6 +1,6 @@
 # list-empty-files
 
-[![NPM version](https://img.shields.io/npm/v/list-empty-files.svg)](https://www.npmjs.com/package/list-empty-files)
+[![npm version](https://img.shields.io/npm/v/list-empty-files.svg)](https://www.npmjs.com/package/list-empty-files)
 [![Build Status](https://travis-ci.org/shinnn/list-empty-files.svg?branch=master)](https://travis-ci.org/shinnn/list-empty-files)
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/list-empty-files.svg)](https://coveralls.io/github/shinnn/list-empty-files?branch=master)
 
@@ -43,7 +43,7 @@ const listEmptyFiles = require('list-empty-files');
 
 *dir*: `string` (directory path)  
 *options*: `Object` ([`readdir-sorted`](https://github.com/shinnn/readdir-sorted) options)  
-Return: `Promise<Set>`
+Return: `Promise<Set<string>>`
 
 The promise will be fulfilled with a [`Set`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set) of strings — absolute paths of all zero byte files included in the given directory.
 
@@ -72,4 +72,4 @@ listEmptyFiles('/dir', {
 
 ## License
 
-[Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed)
+[ISC License](./LICENSE) © 2018 Shinnosuke Watanabe
